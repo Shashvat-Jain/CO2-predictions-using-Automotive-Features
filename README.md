@@ -19,13 +19,59 @@ This repository presents an end-to-end machine-learning pipeline for **analyzing
 
 Key result:
 
-> **Test set**: \\(R^2 = 0.9830\\), MAE ≈ 3.08 g/km, RMSE ≈ 8.64 g/km
+> **Test set**: (R^2 = 0.9830), MAE ≈ 3.08 g/km, RMSE ≈ 8.64 g/km
 
 ---
 
 ## 📦 Repository Structure
 
-will be updated soon
+.
+├── README.md
+├── LICENSE
+├── CITATION.cff
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── DATA_DICTIONARY.md
+├── .gitignore
+├── environment.yml
+├── requirements.txt
+├── setup.py
+├── Dockerfile
+│
+├── data/
+│ └── New Dataset.csv
+│
+├── notebooks/
+│ └── co2-emissions-predict.ipynb
+│
+├── src/
+│ ├── **init**.py
+│ ├── preprocessing.py
+│ ├── models.py
+│ ├── evaluation.py
+│ └── pipeline.py
+│
+├── tests/
+│ └── test_pipeline.py
+│
+├── Figures/
+│ ├── parity_plot.png
+│ ├── residual_hist.png
+│ ├── qq_plot.png
+│ ├── residuals_vs_pred.png
+│ ├── mae_decile.png
+│ ├── learning_curve.png
+│ ├── perm_importance.png
+│ ├── shap_summary.png
+│ ├── shap_dependence.png
+│ └── pipeline_diagram.png
+│
+├── Slides/
+│ └── End Evaluation.pdf
+│
+└── Reports/
+├── Split Report
+└── Final Report with plag report.pdf
 
 ---
 
@@ -53,7 +99,7 @@ will be updated soon
 ## 🚀 Usage
 
 1. **Prepare data**
-   Place co2_emission_by_vehicles.csv under data/.
+   Place New Dataset.csv under data/.
 
 2. **Run notebook**
    Open and execute notebooks/co2_emissions_predict.ipynb to reproduce EDA, model training, and evaluation.
@@ -64,6 +110,8 @@ will be updated soon
    - Residual histogram & Q-Q plot
    - Learning curve
    - Permutation & SHAP importance charts
+
+Note: The notebook co2_emissions_predict.ipynb contains the complete code for the thesis whereas the src folder only contains the code for the new pipeline presented in this research.
 
 ## 📊 Results Snapshot
 
