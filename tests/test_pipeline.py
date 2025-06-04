@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import tempfile
-from src.pipeline import run_pipeline
-from src.preprocessing import build_preprocessor, build_target_transformer
+from co2_emissions_ml.pipeline import run_pipeline
+from co2_emissions_ml.preprocessing import build_preprocessor, build_target_transformer
 
 
 def make_toy_data(n=50):

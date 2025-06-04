@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: co2-emissions-ml
+Version: 1.0.0
+Summary: End-to-end ML pipeline for vehicle CO2 emissions prediction
+Home-page: https://github.com/Shashvat-Jain/CO2-predictions-using-Automotive-Features/
+Author: Shashvat Jain
+Author-email: 20je0897@mc.iitism.ac.in
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+License-File: LICENSE
+
+UNKNOWN
+

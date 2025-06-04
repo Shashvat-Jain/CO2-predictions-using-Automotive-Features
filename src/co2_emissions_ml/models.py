@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.linear_model import Ridge
 from sklearn.neural_network import MLPRegressor
 from sklearn.model_selection import KFold
+from sklearn.metrics import r2_score
 import optuna
 from lightgbm import LGBMRegressor
 from xgboost import XGBRegressor
@@ -69,7 +70,7 @@ def fit_cluster_model(X, y, preprocessor, target_transformer, n_trials=60):
             )
             mlp.fit(meta_X, yva)
             preds = mlp.predict(meta_X)
-            scores.append(ridge_score(yva, preds))
+            scores.append(r2_score(yva, preds))
         return np.mean(scores)
 
     study = optuna.create_study(direction="maximize")
@@ -78,20 +79,32 @@ def fit_cluster_model(X, y, preprocessor, target_transformer, n_trials=60):
 
     # Refit base learners on full training data
     base1 = LGBMRegressor(
-        **{k.replace("lg_", ""): v for k, v in best.items() if k.startswith("lg_")},
+        n_estimators=best["lg_n"],
+        learning_rate=best["lg_lr"],
+        num_leaves=best["lg_leaves"],
+        reg_alpha=best["lg_a"],
+        reg_lambda=best["lg_l"],
         random_state=42,
-        verbosity=-1
+        verbose=-1,
     )
     base2 = XGBRegressor(
-        **{k.replace("xg_", ""): v for k, v in best.items() if k.startswith("xg_")},
+        n_estimators=best["xg_n"],
+        learning_rate=best["xg_lr"],
+        max_depth=best["xg_d"],
+        subsample=best["xg_sub"],
+        colsample_bytree=best["xg_col"],
         random_state=42,
-        verbosity=0
+        verbosity=0,
     )
     base3 = CatBoostRegressor(
-        **{k.replace("ct_", ""): v for k, v in best.items() if k.startswith("ct_")},
+        iterations=best["ct_n"],
+        learning_rate=best["ct_lr"],
+        depth=best["ct_d"],
+        l2_leaf_reg=best["ct_l2"],
         random_state=42,
-        verbose=0
+        verbose=0,
     )
+
     for m in (base1, base2, base3):
         m.fit(Xp, yt)
 

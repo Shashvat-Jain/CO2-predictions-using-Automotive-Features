@@ -22,7 +22,7 @@ def build_preprocessor(X: pd.DataFrame) -> ColumnTransformer:
     # Categorical pipeline
     cat_pipe = Pipeline(
         [
-            ("ohe", OneHotEncoder(sparse=False, handle_unknown="ignore")),
+            ("ohe", OneHotEncoder(sparse_output=False, handle_unknown="ignore")),
         ]
     )
 

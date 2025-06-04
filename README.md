@@ -25,6 +25,7 @@ Key result:
 
 ## 📦 Repository Structure
 
+```bash
 .
 ├── README.md
 ├── LICENSE
@@ -45,7 +46,7 @@ Key result:
 │ └── co2-emissions-predict.ipynb
 │
 ├── src/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── preprocessing.py
 │ ├── models.py
 │ ├── evaluation.py
@@ -72,6 +73,7 @@ Key result:
 └── Reports/
 ├── Split Report
 └── Final Report with plag report.pdf
+```
 
 ---
 

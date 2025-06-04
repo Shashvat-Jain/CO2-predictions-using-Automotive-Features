@@ -1,0 +1,56 @@
+Make,Model,Vehicle Class,Engine Size(L),Cylinders,Transmission,Fuel Type,Fuel Consumption City (L/100 km),Fuel Consumption Hwy (L/100 km),Fuel Consumption Comb (L/100 km),Fuel Consumption Comb (mpg)
+Acura,Integra A-SPEC,Full-size,1.5,4,AV7,Z,8.1,6.5,7.4,38
+Acura,Integra A-SPEC,Full-size,1.5,4,M6,Z,8.9,6.5,7.8,36
+Acura,Integra Type S,Full-size,2,4,M6,Z,11.1,8.3,9.9,29
+Acura,MDX SH-AWD,Sport utility vehicle: Small,3.5,6,AS10,Z,12.6,9.4,11.2,25
+Acura,MDX SH-AWD Type S,Sport utility vehicle: Standard,3,6,AS10,Z,13.8,11.2,12.4,23
+Acura,RDX SH-AWD,Sport utility vehicle: Small,2,4,AS10,Z,11,8.6,9.9,29
+Acura,RDX SH-AWD A-SPEC,Sport utility vehicle: Small,2,4,AS10,Z,11.3,9.1,10.3,27
+Alfa Romeo,Giulia,Mid-size,2,4,A8,Z,10,7.2,8.7,32
+Alfa Romeo,Giulia AWD,Mid-size,2,4,A8,Z,10.5,7.7,9.2,31
+Alfa Romeo,Giulia Quadrifoglio,Mid-size,2.9,6,A8,Z,13.5,9.3,11.6,24
+Alfa Romeo,Stelvio,Sport utility vehicle: Small,2,4,A8,Z,10.3,8.1,9.3,30
+Alfa Romeo,Stelvio AWD,Sport utility vehicle: Small,2,4,A8,Z,10.8,8.3,9.6,29
+Alfa Romeo,Stelvio AWD Quadrifoglio,Sport utility vehicle: Small,2.9,6,A8,Z,13.9,10.3,12.3,23
+Alfa Romeo,Tonale AWD,Sport utility vehicle: Small,2,4,A9,X,11.2,8.2,9.8,29
+Aston Martin,DB12,Minicompact,4,8,A8,Z,15.9,10.5,13.5,21
+Aston Martin,DBS V12,Minicompact,5.2,12,A8,Z,16.4,10.7,13.8,20
+Aston Martin,DBX V8,Sport utility vehicle: Standard,4,8,A9,Z,16.8,11.9,14.6,19
+Aston Martin,DBX707,Sport utility vehicle: Standard,4,8,A9,Z,15.7,12,14,20
+Aston Martin,Valour,Two-seater,5.2,12,M6,Z,18.9,13.1,16.3,17
+Audi,A3 40 TFSI quattro,Subcompact,2,4,AM7,X,9.2,6.9,8.1,35
+Audi,A4 45 TFSI quattro,Compact,2,4,AM7,Z,10,7.4,8.8,32
+Audi,A4 allroad 45 TFSI quattro,Station wagon: Small,2,4,AM7,Z,10.3,7.8,9.2,31
+Audi,A5 Cabriolet 45 TFSI quattro,Subcompact,2,4,AM7,Z,9.8,7.1,8.6,33
+Audi,A5 Coupé 45 TFSI quattro,Subcompact,2,4,AM7,Z,10,7.4,8.8,32
+Audi,A5 Sportback 45 TFSI quattro,Mid-size,2,4,AM7,Z,10,7.4,8.8,32
+Audi,A6 45 TFSI quattro,Mid-size,2,4,AM7,Z,10.4,7.2,9,31
+Audi,A6 55 TFSI quattro,Mid-size,3,6,AM7,Z,10.9,8,9.6,29
+Audi,A6 allroad 55 TFSI quattro,Station wagon: Mid-size,3,6,AM7,Z,10.9,8,9.6,29
+Audi,A7 Sportback 55 TFSI quattro,Mid-size,3,6,AM7,Z,10.9,8,9.6,29
+Audi,A8 L 55 TFSI quattro,Full-size,3,6,AS8,Z,12.4,8.4,10.6,27
+Audi,Q3 40 TFSI quattro,Sport utility vehicle: Small,2,4,AS8,X,10.7,8.1,9.5,30
+Audi,Q3 45 TFSI quattro,Sport utility vehicle: Small,2,4,AS8,X,11.5,8.5,10.2,28
+Audi,Q5 40 TFSI quattro,Sport utility vehicle: Small,2,4,AM7,Z,10.1,8,9.2,31
+Audi,Q5 45 TFSI quattro,Sport utility vehicle: Small,2,4,AM7,Z,11,8.5,9.9,29
+Audi,Q5 Sportback 45 TFSI quattro,Sport utility vehicle: Small,2,4,AM7,Z,11,8.5,9.9,29
+Audi,Q7 45 TFSI quattro,Sport utility vehicle: Standard,2,4,AS8,Z,12.3,9.4,11,26
+Audi,Q7 55 TFSI quattro,Sport utility vehicle: Standard,3,6,AS8,Z,12.7,9.8,11.4,25
+Audi,Q8 55 TFSI quattro,Sport utility vehicle: Standard,3,6,AS8,Z,13.6,10.4,12.1,23
+Audi,RS 5 Coupé,Subcompact,2.9,6,AS8,Z,12.9,9.3,11.3,25
+Audi,RS 5 Sportback,Mid-size,2.9,6,AS8,Z,13.3,9.6,11.6,24
+Audi,RS 6 Avant performance,Station wagon: Mid-size,4,8,AS8,Z,16.9,11,14.2,20
+Audi,RS 7 Sportback performance,Mid-size,4,8,AS8,Z,16.9,11,14.2,20
+Audi,RS Q8,Sport utility vehicle: Standard,4,8,AS8,Z,17.7,12.4,15.3,18
+Audi,S3 quattro,Subcompact,2,4,AM7,Z,10.2,7.4,8.9,32
+Audi,S4 quattro,Compact,3,6,AS8,Z,11.1,8.1,9.7,29
+Audi,S5 Cabriolet quattro,Subcompact,3,6,AS8,Z,11.9,8.8,10.5,27
+Audi,S5 Coupé quattro,Subcompact,3,6,AS8,Z,11.1,8.1,9.7,29
+Audi,S5 Sportback quattro,Mid-size,3,6,AS8,Z,11.8,8.2,10.2,28
+Audi,S6 quattro,Mid-size,2.9,6,AS8,Z,12.3,8.8,10.7,26
+Audi,S7 quattro,Mid-size,2.9,6,AS8,Z,12.3,8.8,10.7,26
+Audi,S8 quattro,Full-size,4,8,AS8,Z,16,10,13.3,21
+Audi,SQ5 quattro,Sport utility vehicle: Small,3,6,AS8,Z,12.6,9.8,11.4,25
+Audi,SQ5 Sportback quattro,Sport utility vehicle: Small,3,6,AS8,Z,12.6,9.8,11.4,25
+Audi,SQ7 quattro,Sport utility vehicle: Standard,4,8,AS8,Z,16,11.5,13.9,20
+Audi,SQ8 quattro,Sport utility vehicle: Standard,4,8,AS8,Z,15.6,11.5,13.8,20
