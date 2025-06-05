@@ -6,16 +6,18 @@
 
 ---
 
-## 📖 Project Overview
+# co2_emissions_ml
 
-This repository presents an end-to-end machine-learning pipeline for **analyzing** and **predicting** on-road vehicle CO₂ emissions (g/km) using public datasets. We combine:
+**CO₂ Emissions Prediction from Vehicle Features**  
+End-to-end Python package for analyzing and predicting on-road vehicle CO₂ emissions (g/km) via machine learning.
 
-1. **Exploratory Data Analysis (EDA)** to understand feature distributions and relationships
-2. **Preprocessing & Feature Engineering** (scaling, encoding, power transforms)
-3. **Multiple Baseline Models** (linear, polynomial, regularized regressions; tree-based and boosting methods)
-4. **Final Stacking Ensemble** (LightGBM, XGBoost, CatBoost base learners → MLP meta-learner → Ridge residual correction)
-5. **Hyperparameter Optimization** via Optuna
-6. **Comprehensive Diagnostics** (parity plots, residual analysis, learning curves, permutation importance, SHAP)
+## Features
+
+- **Preprocessing & Feature Engineering**: scaling, one-hot encoding, target transformation
+- **Baseline Models**: linear, polynomial, ridge/lasso, random forest, XGBoost, LightGBM, CatBoost
+- **Stacked Ensemble**: LightGBM + XGBoost + CatBoost → MLP meta-learner → Ridge residual correction
+- **Bayesian Hyperparameter Tuning**: Optuna pruners, early stopping
+- **Diagnostics & Explainability**: parity plots, residual analysis, learning curves, permutation importance, SHAP
 
 Key result:
 
@@ -46,14 +48,19 @@ Key result:
 │ └── co2-emissions-predict.ipynb
 │
 ├── src/
-│ ├── __init__.py
-│ ├── preprocessing.py
-│ ├── models.py
-│ ├── evaluation.py
-│ └── pipeline.py
+│ ├──models
+│ └──co2_emissions_ml
+│    ├── __init__.py
+│    ├── preprocessing.py
+│    ├── models.py
+│    ├── evaluation.py
+│    └── pipeline.py
 │
 ├── tests/
 │ └── test_pipeline.py
+│
+├── scripts/
+│ └── train_and_save.py
 │
 ├── Figures/
 │ ├── parity_plot.png
@@ -79,26 +86,53 @@ Key result:
 
 ## ⚙️ Installation
 
-1. **Clone the repository**
-
 ```bash
-   git clone https://github.com/Shashvat-Jain/CO2-predictions-using-Automotive-Features.git
+# From PyPI
+pip install co2_emissions_ml
+
+# Or install latest from GitHub
+pip install git+https://github.com/Shashvat-Jain/CO2-predictions-using-Automotive-Features.git
 ```
 
-2. **Create a virtual environment**
+## Quickstart
+
+1. **Predict via CLI**
 
 ```bash
-    python3 -m venv venv
-    source venv/bin/activate
+run_co2 \
+  --data path/to/your_new_data.csv \
+  --model path/to/pretrained_bundle.pkl \
+  --output path/to/predictions.csv
 ```
 
-3. **Install dependencies**
+- --data (required): input CSV with vehicle features
 
-```bash
-    pip install -r requirements.txt
+- --model (optional): path to serialized bundle.pkl (default: models/bundle.pkl)
+
+- --output (optional): CSV path for predictions
+
+- --target (optional): dependent variable name in input CSV
+
+2. **Programmatic API**
+
+```python
+import pandas as pd
+import joblib
+from co2_emissions_ml.models import predict_bundle
+
+# Load pre-trained bundle
+bundle = joblib.load("models/bundle.pkl")
+
+# Prepare new data
+df_new = pd.read_csv("your_new_data.csv")
+X_new  = df_new.copy()
+
+# Predict
+df_new["predicted_CO2"] = predict_bundle(bundle, X_new)
+df_new.to_csv("predictions.csv", index=False)
 ```
 
-## 🚀 Usage
+## 🚀 Usage of GitHub Repository
 
 1. **Prepare data**
    Place New Dataset.csv under data/.

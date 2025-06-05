@@ -11,7 +11,12 @@ def run_pipeline(
     target_col: str = None,
 ):
     # 1) Load data
-    df = pd.read_csv(data_path)
+    try:
+        df = pd.read_csv(data_path)
+    except UnicodeDecodeError:
+        # fall back to latin-1 for files with extended characters
+        print(f"[WARN] UTF-8 decode failed, retrying with latin-1 for {data_path}")
+        df = pd.read_csv(data_path, encoding="latin-1")
     # If no target_col given, try to auto-detect
     if target_col is None:
         # pick the one column containing "CO2" or "Emissions"
@@ -55,21 +60,24 @@ def run_pipeline(
     return bundle, metrics
 
 
-def main():
+DEFAULT_MODEL = os.path.join(os.path.dirname(__file__), "..", "models", "bundle.pkl")
 
+
+def main():
     parser = argparse.ArgumentParser(
         description="Train & evaluate the CO₂ emissions pipeline"
     )
-    parser.add_argument("--data", dest="data_path", type=str, required=True)
-    parser.add_argument("--target", dest="target_col", type=str, default=None)
-    parser.add_argument("--output", dest="out_csv", type=str, default=None)
     parser.add_argument(
         "--model",
         dest="model_path",
         type=str,
-        default="models/bundle.pkl",
-        help="Path to serialized model bundle (for inference only)",
+        default=DEFAULT_MODEL,
+        help="Path to pre-trained bundle (for inference).",
     )
+
+    parser.add_argument("--data", dest="data_path", type=str, required=True)
+    parser.add_argument("--target", dest="target_col", type=str, default=None)
+    parser.add_argument("--output", dest="out_csv", type=str, default=None)
     args = parser.parse_args()
 
     # If model_path exists, run in inference‐only mode
@@ -78,7 +86,14 @@ def main():
         bundle = joblib.load(args.model_path)
 
         # Pure inference: read data, predict, write out
-        df = pd.read_csv(args.data_path)
+        try:
+            df = pd.read_csv(args.data_path)
+        except UnicodeDecodeError:
+            print(
+                f"[WARN] UTF-8 decode failed, retrying with latin-1 for {args.data_path}"
+            )
+            df = pd.read_csv(args.data_path, encoding="latin-1")
+
         X_new = df.copy()
         preds = predict_bundle(bundle, X_new)
         df["predicted_CO2"] = preds
@@ -94,7 +109,13 @@ def main():
 
     # If user wants raw predictions on every row:
     if args.out_csv:
-        df = pd.read_csv(args.data_path)
+        try:
+            df = pd.read_csv(args.data_path)
+        except UnicodeDecodeError:
+            print(
+                f"[WARN] UTF-8 decode failed, retrying with latin-1 for {args.data_path}"
+            )
+            df = pd.read_csv(args.data_path, encoding="latin-1")
         # drop target if present
         if args.target_col in df.columns:
             X = df.drop(columns=[args.target_col])
