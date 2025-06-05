@@ -1,5 +1,8 @@
 # CO₂ Emissions Prediction from Vehicle Features
 
+[![PyPI version](https://img.shields.io/pypi/v/co2_emissions_ml.svg)](https://pypi.org/project/co2_emissions_ml/)
+[![Python versions](https://img.shields.io/pypi/pyversions/co2_emissions_ml.svg)](https://pypi.org/project/co2_emissions_ml/)
+
 **Authors:** Shashvat Jain  
 **Affiliation:** Integrated M.Tech. in Mathematics & Computing, IIT Dhanbad  
 **GitHub:** https://github.com/Shashvat-Jain/CO2-predictions-using-Automotive-Features
