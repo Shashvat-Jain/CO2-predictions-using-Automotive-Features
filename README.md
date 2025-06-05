@@ -2,6 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/co2_emissions_ml.svg)](https://pypi.org/project/co2_emissions_ml/)
 [![Python versions](https://img.shields.io/pypi/pyversions/co2_emissions_ml.svg)](https://pypi.org/project/co2_emissions_ml/)
+[![Documentation Status](https://readthedocs.org/projects/co2-emissions-ml/badge/?version=latest)](https://co2-predictions-using-automotive-features.readthedocs.io/en/latest/)
 
 **Authors:** Shashvat Jain  
 **Affiliation:** Integrated M.Tech. in Mathematics & Computing, IIT Dhanbad  
